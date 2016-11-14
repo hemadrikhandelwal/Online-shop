@@ -10,7 +10,6 @@ increase_views($id)->increment view by 1;
 		global $con;
 		$q="update products set product_views=product_views+1 where product_id='$id'";
 		$run=mysqli_query($con,$q);
-		echo "<script>alert($run)</script>";
 	}
 ?>
 

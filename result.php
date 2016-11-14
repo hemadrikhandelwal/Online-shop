@@ -1,4 +1,3 @@
-<!-- This Page will be used to display single product -->
 <?php
 	include("function/function.php");
 ?>
@@ -22,7 +21,7 @@
 #hi{float:right;text-decoration:underline;margin-top:5px; margin-bottom:5px;}
 
 </style>
-<body style="margin-top:70px">
+<body style="margin-top:70px;">
 	<!--navbar-->
 	
 	<nav class="navbar navbar-inverse navbar-fixed-top twoRow" id="my-navbar">
@@ -35,15 +34,21 @@
 							<a href="index.php" class="navbar-brand">Patanjali E-Shop</a>
 						</div>
 					</div>
-		
+
+					<!-- Search Form -->
+					
 					<div class="col-lg-4">
 						<div class="input-group" style="margin-top:8px">
-							<input type="text" class="form-control" placeholder="Search for..." />
+							<form id="search" method="GET" action="result.php">
+								<input type="text" class="form-control" placeholder="Search for..." name="query"/>
+							</form>
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
+								<button class="btn btn-default" type="submit" form="search">Go!</button>
 							</span>
 						</div>
 					</div>
+					<!-- Form Ends Here -->
+					
 
 					<div class="col-lg-4">					
 					</div>
@@ -57,27 +62,27 @@
 					</div>
 			
 					<div class="col-lg-1">
-								<div class="btn-group" style="margin:2px">
-									<button type="button" class="btn btn-success navbar-btn dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></button>
-									<div class="dropdown-menu"  >
+						<div class="btn-group" style="margin:2px">
+							<button type="button" class="btn btn-success navbar-btn dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></button>
+							<div class="dropdown-menu"  >
+								<div class="col-sm-12">
+									<div class="col-sm-12">Login</div>
+										<div class="col-sm-12" width="50px">
+										<input type="text" placeholder="User name" onClick="return false;" class="form-control input-sm" id="inputError"/>
+										</div>
+										<br/>
 										<div class="col-sm-12">
-											<div class="col-sm-12">Login</div>
-												<div class="col-sm-12" width="50px">
-												<input type="text" placeholder="User name" onClick="return false;" class="form-control input-sm" id="inputError"/>
-												</div>
-												<br/>
-												<div class="col-sm-12">
-												<input type="password" placeholder="Password" class="form-control input-sm" name="password" id="Password1" />
-												</div>
-												<sub><span id="hi">Forget password?</span></sub>
-												<div class="col-sm-12" style="text-align:center; margin-top:3px">
-												<button type="submit" class="btn btn-success btn-sm">Sign in</button>
-												<div class="form_orDivider">-or-</div>
-												<button type="submit" class="btn btn-primary btn-sm" style="margin-top:5px">Sign up</button>
-												</div>
-									  </div>
-								  </div>
+										<input type="password" placeholder="Password" class="form-control input-sm" name="password" id="Password1" />
+										</div>
+										<sub><span id="hi">Forget password?</span></sub>
+										<div class="col-sm-12" style="text-align:center; margin-top:3px">
+										<button type="submit" class="btn btn-success btn-sm">Sign in</button>
+										<div class="form_orDivider">-or-</div>
+										<button type="submit" class="btn btn-primary btn-sm" style="margin-top:5px">Sign up</button>
+										</div>
 							  </div>
+						  </div>
+					  </div>
 				  </div>
 						
 					<!--<div class="collapse navbar-collapse">
@@ -95,76 +100,61 @@
 		</div>
 	</nav>
 
-	
-	<!-- Main Page content begins here -->
-	<?php
-		if(isset($_GET['product_id']))
-		{
-			$id=$_GET['product_id'];
-			$q="select * from products where product_id=$id";
-			$run=mysqli_query($con,$q);
-			$row=mysqli_fetch_array($run);
-			$cat_id=$row['product_cat'];
-			$title=$row['product_title'];
-			$price=$row['product_price'];
-			$qty=$row['product_qty'];
-			$dim=$row['product_dim'];
-			$image=$row['product_image'];
-			$desc=$row['product_desc'];
-			$keys=$row['product_keys'];
-			$views=$row['product_views'];	
-			
-			increase_views($id);
-			$cat=cat_show($cat_id);
+	<div class="container">
+		<div class="page-header"><h2>Search Result</h2></div>
+		
+		<?php
+			if(isset($_GET['query']))
+			{
+				$query=$_GET['query'];
+				$q="select * from products WHERE product_keys LIKE '%$query%' ";
+				$run=mysqli_query($con,$q);
+				if(mysqli_num_rows($run)==0)
+				{
+					echo "<div style='text-align:center; font-size:1.5em; margin-bottom:50px;'> No Relevant Product found for query <u><b><i>$query</i></b></u></div>";
+				}
+				while($row=mysqli_fetch_array($run))
+				{
+					$id=$row['product_id'];
+					$title=$row['product_title'];
+					$cat=$row['product_cat'];
+					$price=$row['product_price'];
+					$qty=$row['product_qty'];
+					$dim=$row['product_dim'];
+					$image=$row['product_image'];
+					$desc=$row['product_desc'];
+					$keys=$row['product_keys'];
+					$views=$row['product_views'];
 
-			echo "
-
-			<div class='container'>
-				<ol class='breadcrumb'>
-					<li><a href='index.php''>Home</a></li>
-					<li><a href='all_products.php?cat=".$cat_id."&'>$cat  </a></li>
-					<li class='active'> $title</li>
-				</ol>
-				<div class='page-header'>
-  					<h1>$title</h1>
-  				</div>
-				
-        			<div class='row'>
-		            	<div class='col-xs-12 col-sm-6 col-md-4 '>
-		                	<div class='media'>
-		 						<div class='media-left media-middle'> 
-		    						<a href='#'>
-		      							<img class='media-object' src='admin_area/product_images/$image' alt='Error in loading Image of $image' height='300px'>
-		    						</a>
-		  						</div>
+					echo "
+						<div class='row'>
+							<div class='col-md-2 col-xs-2'>
+								<img src='admin_area/product_images/$image' width='200' height='200'class='img-responsive'/>
 							</div>
-	                	</div>
-
-	                	
-
-	                	<div class='col-xs-12 col-sm-6 col-md-8'>
-	                		
-		                    	<h3> <small>Price :</small> ₹ $price </h3>
-		                        <h3> <small>Quantity:</small> $qty $dim</h3>
-		                        <h3> <small>Avalibility :</small> <span class='text-success'>Available</span></h3>
-		                        <h3> <small>Product Category : </small> $cat </h3>
-		                       	<h3> <small>Product Description : </small> </h3>
-		                       	
-			                    <div class='jumbotron'><big>$desc</big></div>   
-		                        <button type='submit' class='btn btn-primary'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>&nbsp; Add to cart</buttton>
-	                     	
-	            
-	                     	
-		                    
-                		</div><!--col-lg-4-->
-                		
-            		</div><!--row ends-->
-				<!--page header -->
-			</div><!--page container--> 
-			";
-		}
-	?>		
-
+							<div class='col-md-10 col-xs-10'>
+								<div class='col-xs-12 col-md-8'>
+									<h3>$title</h3>
+									<p>Price : ₹$price &nbsp;&nbsp;&nbsp;Qty : $qty $dim</p>
+								</div>
+								<div class='col-xs-12 col-md-4'>
+									<div class='col-xs-6'>
+										<button class='btn btn-primary'>Details</button>
+									</div>
+									<div class='col-xs-6'>
+										<button class='btn btn-success'>Add to cart</button>
+									</div>
+								</div>
+							</div>
+							
+						</div><!-- rows -->
+						<hr />
+					";
+				}
+			}
+			
+		?>
+		
+	</div>	
 	
 <!--footer-->
 	<footer>

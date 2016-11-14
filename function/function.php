@@ -35,7 +35,6 @@
 <?php
 	function cat_option()
 	{
-		echo "<option value='-1'>Select Category</option>";
 		global $con;
 		$q="select * from categories";
 		$run=mysqli_query($con,$q);
@@ -46,7 +45,7 @@
 			echo "<option value='$id'>$title</option>";
 		}
 	}
-
+	
 ?>
 
 

@@ -34,15 +34,21 @@
 							<a href="index.php" class="navbar-brand">Patanjali E-Shop</a>
 						</div>
 					</div>
-		
+
+					<!-- Search Form -->
+					
 					<div class="col-lg-4">
 						<div class="input-group" style="margin-top:8px">
-							<input type="text" class="form-control" placeholder="Search for..." />
+							<form id="search" method="GET" action="result.php">
+								<input type="text" class="form-control" placeholder="Search for..." name="query"/>
+							</form>
 							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
+								<button class="btn btn-default" type="submit" form="search">Go!</button>
 							</span>
 						</div>
 					</div>
+					<!-- Form Ends Here -->
+					
 
 					<div class="col-lg-4">					
 					</div>
@@ -56,27 +62,27 @@
 					</div>
 			
 					<div class="col-lg-1">
-								<div class="btn-group" style="margin:2px">
-									<button type="button" class="btn btn-success navbar-btn dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></button>
-									<div class="dropdown-menu"  >
+						<div class="btn-group" style="margin:2px">
+							<button type="button" class="btn btn-success navbar-btn dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></button>
+							<div class="dropdown-menu"  >
+								<div class="col-sm-12">
+									<div class="col-sm-12">Login</div>
+										<div class="col-sm-12" width="50px">
+										<input type="text" placeholder="User name" onClick="return false;" class="form-control input-sm" id="inputError"/>
+										</div>
+										<br/>
 										<div class="col-sm-12">
-											<div class="col-sm-12">Login</div>
-												<div class="col-sm-12" width="50px">
-												<input type="text" placeholder="User name" onClick="return false;" class="form-control input-sm" id="inputError"/>
-												</div>
-												<br/>
-												<div class="col-sm-12">
-												<input type="password" placeholder="Password" class="form-control input-sm" name="password" id="Password1" />
-												</div>
-												<sub><span id="hi">Forget password?</span></sub>
-												<div class="col-sm-12" style="text-align:center; margin-top:3px">
-												<button type="submit" class="btn btn-success btn-sm">Sign in</button>
-												<div class="form_orDivider">-or-</div>
-												<button type="submit" class="btn btn-primary btn-sm" style="margin-top:5px">Sign up</button>
-												</div>
-									  </div>
-								  </div>
+										<input type="password" placeholder="Password" class="form-control input-sm" name="password" id="Password1" />
+										</div>
+										<sub><span id="hi">Forget password?</span></sub>
+										<div class="col-sm-12" style="text-align:center; margin-top:3px">
+										<button type="submit" class="btn btn-success btn-sm">Sign in</button>
+										<div class="form_orDivider">-or-</div>
+										<button type="submit" class="btn btn-primary btn-sm" style="margin-top:5px">Sign up</button>
+										</div>
 							  </div>
+						  </div>
+					  </div>
 				  </div>
 						
 					<!--<div class="collapse navbar-collapse">
@@ -103,8 +109,8 @@
         	<li data-target="#myCarousel" data-slide-to="2"></li>
       	</ol>
       	<div class="carousel-inner" role="listbox">
-        	<div class="item active">
-          		<img class="first-slide" src="images/poster1.jpg" alt="First slide" >
+        	<div class="item active" >
+          		<img class="first-slide center-block" src="images/poster22.jpg" alt="First slide" >
           		<div class="container">
             		<div class="carousel-caption">
               			<h3>Wide range of products to choose from</h3>
@@ -113,7 +119,7 @@
           		</div>
         	</div>
         	<div class="item">
-          		<img class="second-slide" src="images/poster2.jpg" alt="second slide">
+          		<img class="second-slide center-block" src="images/poster11.jpg" alt="second slide">
           		<div class="container">
             		<div class="carousel-caption">
               			<h3>Wide range of products to choose from</h3>
@@ -122,7 +128,7 @@
           		</div>
         	</div>
         	<div class="item ">
-          		<img class="third-slide" src="images/poster3.jpg" alt="Third slide">
+          		<img class="third-slide center-block" src="images/poster33.jpg" alt="Third slide">
           		<div class="container">
             		<div class="carousel-caption">
               			<h3>Wide range of products to choose from</h3>

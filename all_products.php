@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css" >
 
 	<link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <style>
@@ -102,12 +104,57 @@
 	
 <!--All Products -->
 <div class="container">
-	<div class="page header" >
-		<h3>All Products</h3>
-	</div>
-	<hr>
 	<div class="row">
-		<?php show_all(); ?>
+		<div class="col-sm-2 bg-info" >
+			<form name="">
+				<div style="margin-top:20px">
+					Sort By : 
+					<select name="sort" id="sort">
+						<option value="1">Popularity</option>
+						<option value="2">Price: Low to High</option>
+						<option value="3">Price: High to Low</option>
+						<option value="4">Latest</option>
+						<option value="5">Oldest</option>
+					</select>
+				</div>
+
+				<hr />
+
+				Category : 
+				<select name="cat" id="cat">
+					<option value="0">All Categories</option>
+					<?php cat_option() ?>
+				</select>
+
+				<hr />
+
+				Price Range : 
+				<br />
+				From : ₹ <input type="text" name="p_start" size="5" id="p_start"/>
+				<br />
+				<div style="margin-top:10px">
+					To : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹ <input type="text" name="p_end" size="5" id="p_end" /></div>
+
+				<hr />
+
+
+				<div style="text-align:center; margin-bottom:10px">
+					<input type="submit" value="GO" name="s"/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" />
+				</div>
+
+			</form>
+		</div>
+		<div class="col-sm-10">
+			<div class="page header" >
+				<h3>All Products</h3>
+			</div>
+			<hr>
+			<div class="row">
+				<?php show_all(); ?>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -181,7 +228,19 @@
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/npm.js"</script>
+	<!-- To select the form automatically -->
+	<script>
+		var val = location.href.match(/[?&]cat=(.*?)[$&]/)[1];   // get params from URL
+		$('#cat').val(val);
 
+		val = location.href.match(/[?&]sort=(.*?)[$&]/)[1];
+		$('#sort').val(val);
+
+		val = location.href.match(/[?&]p_start=(.*?)[$&]/)[1];
+		$('#p_start').val(val);
+
+		val = location.href.match(/[?&]p_end=(.*?)[$&]/)[1];
+		$('#p_end').val(val);
+	</script>
 </body>
 </html>
