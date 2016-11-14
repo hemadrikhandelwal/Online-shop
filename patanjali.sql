@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2016 at 07:50 PM
+-- Generation Time: Nov 14, 2016 at 10:02 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -68,12 +68,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_title`, `product_cat`, `product_qty`, `product_dim`, `product_price`, `product_image`, `product_desc`, `product_keys`, `product_views`) VALUES
-(1, 'Marie Biscuit', 1, 75, 'gm', 10, 'Patanjali-Marie-biscuit_120-gm.15.png', 'Patanjali Marie Biscuit are made of wheat flour and are best in taste. ', 'biscuit, marie, wheat, snack, 10', 0),
-(2, 'Pure Honey', 4, 250, 'gm', 70, '114244_12O7J_p.jpg', 'This is a pure honey by patanjali.', 'honey, pure, healthy, 70', 0),
-(3, 'Kesh Kanti Reetha Hair Cleanser', 2, 200, 'gm', 85, 'patanjali-kesh-kanti-reetha-200ml.jpg', 'Kesh Kanti Reetha Hair cleanser is best cleanser for your hair.', 'Kesh Kanti Reetha Hair cleanser ', 0),
-(4, 'Atta Noodles', 1, 70, 'gm', 15, 'noodles-500x539.JPG', 'Patanjali Atta noodles which is fibrous and free of lead. good for health and best in taste.', 'wheat, atta, noodle, sevaiya, leadfree', 0),
-(5, 'Elaichi Soan Papdi', 1, 500, 'gm', 105, 'Patanjali-Navratan-Elaichi-Soan-Papdi_250-gm.8.png', 'Elaichi Soan Papdi', 'Elaichi Soan Papdi sweet', 0),
-(6, 'Haldi Chandan Soap', 2, 150, 'gm', 25, 'Patanjali-haldi-chandan-body-cleaner_75-gm.5.png', 'Haldi chandan soap ', 'Haldi chandan soap body cleanser turmeric', 0);
+(1, 'Marie Biscuit', 1, 75, 'gm', 10, 'Patanjali-Marie-biscuit_120-gm.15.png', 'Patanjali Marie Biscuit are made of wheat flour and are best in taste. ', 'biscuit, marie, wheat, snack, 10', 2),
+(2, 'Pure Honey', 4, 250, 'gm', 70, '114244_12O7J_p.jpg', 'This is a pure honey by patanjali.', 'honey, pure, healthy, 70', 1),
+(3, 'Kesh Kanti Reetha Hair Cleanser', 2, 200, 'gm', 85, 'patanjali-kesh-kanti-reetha-200ml.jpg', 'Kesh Kanti Reetha Hair cleanser is best cleanser for your hair.', 'Kesh Kanti Reetha Hair cleanser ', 12),
+(4, 'Atta Noodles', 1, 70, 'gm', 15, 'noodles-500x539.JPG', 'Patanjali Atta noodles which is fibrous and free of lead. good for health and best in taste.', 'wheat, atta, noodle, sevaiya, leadfree', 8),
+(5, 'Elaichi Soan Papdi', 1, 500, 'gm', 105, 'Patanjali-Navratan-Elaichi-Soan-Papdi_250-gm.8.png', 'Elaichi Soan Papdi', 'Elaichi Soan Papdi sweet', 11),
+(6, 'Haldi Chandan Soap', 2, 150, 'gm', 25, 'Patanjali-haldi-chandan-body-cleaner_75-gm.5.png', 'Haldi chandan soap ', 'Haldi chandan soap body cleanser turmeric', 1);
 
 -- --------------------------------------------------------
 
