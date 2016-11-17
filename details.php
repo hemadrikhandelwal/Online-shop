@@ -23,78 +23,8 @@
 
 </style>
 <body style="margin-top:70px">
-	<!--navbar-->
-	
-	<nav class="navbar navbar-inverse navbar-fixed-top twoRow" id="my-navbar">
-		<div class="container">
-			<div class="navbar-header">
-				<div class="row">
-
-					<div class="col-lg-2">
-						<div class="navbar-header">
-							<a href="index.php" class="navbar-brand">Patanjali E-Shop</a>
-						</div>
-					</div>
-		
-					<div class="col-lg-4">
-						<div class="input-group" style="margin-top:8px">
-							<input type="text" class="form-control" placeholder="Search for..." />
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
-							</span>
-						</div>
-					</div>
-
-					<div class="col-lg-4">					
-					</div>
-				
-					<div class="col-lg-1" >
-						<div class="form-group">
-							<div class="col-lg-12" style="text-align:ceter;margin-top:10px">
-								<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>&nbsp;Cart</button>
-							</div>
-						</div>
-					</div>
-			
-					<div class="col-lg-1">
-								<div class="btn-group" style="margin:2px">
-									<button type="button" class="btn btn-success navbar-btn dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></button>
-									<div class="dropdown-menu"  >
-										<div class="col-sm-12">
-											<div class="col-sm-12">Login</div>
-												<div class="col-sm-12" width="50px">
-												<input type="text" placeholder="User name" onClick="return false;" class="form-control input-sm" id="inputError"/>
-												</div>
-												<br/>
-												<div class="col-sm-12">
-												<input type="password" placeholder="Password" class="form-control input-sm" name="password" id="Password1" />
-												</div>
-												<sub><span id="hi">Forget password?</span></sub>
-												<div class="col-sm-12" style="text-align:center; margin-top:3px">
-												<button type="submit" class="btn btn-success btn-sm">Sign in</button>
-												<div class="form_orDivider">-or-</div>
-												<button type="submit" class="btn btn-primary btn-sm" style="margin-top:5px">Sign up</button>
-												</div>
-									  </div>
-								  </div>
-							  </div>
-				  </div>
-						
-					<!--<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Ediable</a></li>
-						
-					<li><a href="#cosmetic">Cosmetic</a></li>
-					<li><a href="#daily products">Daily products</a></li>
-					<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>-->
-
-				</div>
-			</div>
-		</div>
-	</nav>
-
+	<!-- Adding Navbar from external file -->
+	<?php include("include/navbar.html") ?>	
 	
 	<!-- Main Page content begins here -->
 	<?php
