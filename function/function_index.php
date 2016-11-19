@@ -43,7 +43,7 @@ show_offer -> display products on which offers are there
 								<a href='details.php?product_id=$id'>
 									<button type='button' class='btn btn-primary'>Details</button>
 								</a>
-								<button type='button' class='btn btn-success'>Add to cart</button>
+									<button type='button' class='btn btn-success addToCart' id='$id' >Add to cart</button>
 							</div>
 								
 					</div>
@@ -87,7 +87,7 @@ show_offer -> display products on which offers are there
 								<a href='details.php?product_id=$id'>
 									<button type='button' class='btn btn-primary'>Details</button>
 								</a>
-								<button type='button' class='btn btn-success'>Add to cart</button>
+								<button type='button' class='btn btn-success addToCart' id='$id' >Add to cart</button>
 							</div>
 								
 					</div>
@@ -133,7 +133,7 @@ show_offer -> display products on which offers are there
 								<a href='details.php?product_id=$id'>
 									<button type='button' class='btn btn-primary'>Details</button>
 								</a>
-								<button type='button' class='btn btn-success'>Add to cart</button>
+								<button type='button' class='btn btn-success addToCart' id='$id'>Add to cart</button>
 							</div>
 								
 					</div>

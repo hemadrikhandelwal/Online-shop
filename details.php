@@ -81,7 +81,7 @@
 		                       	<h3> <small>Product Description : </small> </h3>
 		                       	
 			                    <div class='jumbotron'><big>$desc</big></div>   
-		                        <button type='submit' class='btn btn-primary'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>&nbsp; Add to cart</buttton>
+		                        <button type='submit' class='btn btn-primary addToCart' id='$id'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>&nbsp; Add to cart</buttton>
 	                     	
 	            
 	                     	
@@ -164,7 +164,6 @@
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/npm.js"</script>
-
+	<script src="js/add_to_cart.js"></script>
 </body>
 </html>

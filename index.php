@@ -1,5 +1,10 @@
 <?php
+  session_start(); // Starting session for user login and cart option;
+  //$_SESSION['cart']=array();//intializing cart session
 	include("function/function.php");
+	if($_SESSION['cart']);
+	else
+		$_SESSION['cart']=[];
 ?>
 <!doctype html>
 <html lang="en">
@@ -154,7 +159,7 @@
                             	<li>Contact us</li>
                             <li>Returns
                                 </li>
-                                <li > Order history
+                                <li > rder history
                                 </li>
                                 <li > Seller Login
                                 </li>
@@ -184,7 +189,9 @@
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/npm.js"</script>
-
+	<script type="text/javascript" src="js/add_to_cart.js"></script>
+	<script>
+		//custom JS 
+	</script>
 </body>
 </html>

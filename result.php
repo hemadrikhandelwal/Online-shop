@@ -64,10 +64,12 @@
 								</div>
 								<div class='col-xs-12 col-md-4'>
 									<div class='col-xs-6'>
-										<button class='btn btn-primary'>Details</button>
+										<a href='details.php?product_id=$id'
+											<button class='btn btn-primary'>Details</button>
+										</a>
 									</div>
 									<div class='col-xs-6'>
-										<button class='btn btn-success'>Add to cart</button>
+										<button class='btn btn-success addToCart' id=$id>Add to cart</button>
 									</div>
 								</div>
 							</div>
@@ -150,7 +152,7 @@
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/npm.js"</script>
+	<script src="js/add_to_cart.js"></script>
 
 </body>
 </html>

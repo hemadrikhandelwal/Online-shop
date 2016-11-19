@@ -1,12 +1,14 @@
 <!-- Contains Function for whole project -->
 <!-- Making Database Connection -->
 <?php
+	session_start();
 	$con=mysqli_connect("localhost","root","","patanjali");
 	if(mysqli_connect_errno())
 	{
 		echo "The connection was not established.". mysqli_connect_errno();
 	}
 ?>
+
 <?php
 	include('function_index.php');
 	/*
@@ -31,8 +33,51 @@
  ?>
 
 
+	
+
 
 <?php
+	// function to get IP address of user
+	function getIp()
+	{
+		$ip=$_SERVER['REMOTE_ADDR'];
+
+		if(!empty($_SERVER['HTTP_CLIENT_IP']))
+		{
+			$ip=$_SERVER['HTTP_CLIENT_IP'];
+		}
+		elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+		{
+			$ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		return $ip;
+	}
+
+	// Function which o clicking add cart button add product to cart
+	function cart()
+	{
+		global $con;
+		$ip=getIp();
+		echo "<script>alert($ip)</script>";
+		if(isset($_GET['add_cart']))
+		{
+			$pro_id=$_GET['add_cart'];
+			$check_pro="select * from cart where ip_add='$ip' AND p_id='$pro_id'";
+			$run_check=mysqli_query($con,$check_pro);
+			// only 1 product added at a time in cart
+			if(mysqli_num_rows($run_check) )
+				echo "";
+			else
+			{
+				$insert_pro="insert into cart (p_id,ip_add) VALUES ('$pro_id','$ip')";
+				$run_pro=mysqli_query($con,$insert_pro);
+
+				echo "<script>window.open('index.php','_self')</script>";
+			}
+		}
+	}
+
+	//This function returns cat as an option
 	function cat_option()
 	{
 		global $con;
@@ -63,3 +108,8 @@ function cat_show($no)
 	$title=$row['cat_title'];
 	return "$title";
 }
+function add_to_cart()
+{
+	$_SESSION['cart'][91]=["id"=>91,"qty"=>1];
+} 
+?>

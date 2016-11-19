@@ -155,6 +155,7 @@
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/add_to_cart.js"></script>
 	<!-- To select the form automatically -->
 	<script>
 		var val = location.href.match(/[?&]cat=(.*?)[$&]/)[1];   // get params from URL

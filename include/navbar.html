@@ -4,39 +4,50 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
 	<div class="container">
-    	<div class="navbar-header">
-        	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            </button>
-            <a href="index.php" class="navbar-brand">Patanjali  E-Shop</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-        
+			<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="index.php" class="navbar-brand">Patanjali  E-Shop</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+				
 			<form class="navbar-form navbar-left" method="GET" action="result.php" role="search">
-        		<div class="input-group">
-      				<input type="text" class="form-control" placeholder="Search for..." name="query" size="35">
-      				<span class="input-group-btn">
-        				<button class="btn btn-default " type="submit"  style="height:33.99px; !important"><i class="glyphicon glyphicon-search"></i></button>
-      				</span>
-    			</div><!-- /input-group -->
-      		</form>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for..." name="query" size="35">
+							<span class="input-group-btn">
+								<button class="btn btn-default " type="submit"  style="height:33.99px; !important"><i class="glyphicon glyphicon-search"></i></button>
+							</span>
+					</div><!-- /input-group -->
+					</form>
 
 
-      		<div class="navbar-right">
-	      		<span class="navbar-text ">Welcome Guest !</span>
-	            <a href='cart.php'>
-	            	<button type="button" class="btn btn-success navbar-btn btn-margin-rl-10">
-	            		Cart&nbsp;<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-	            	</button>
-	            </a>
-	            <a href='login.php'>
-	            	<button type="button" class="btn btn-primary navbar-btn btn-margin-rl-10">
-	            		Login&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-	            	</button>
-	            </a>
-      		</div>
-      	</div>
-    </div>
+					<div class="navbar-right">
+						<span class="navbar-text ">Welcome Guest !</span>
+							<a href='cart.php' data-container = "body" data-toggle = "popover" data-placement = "bottom" data-content = "Product Added" data-trigger="manual" class="showPopover">
+								<button type="button" class="btn btn-success navbar-btn btn-margin-rl-10" >
+									Cart&nbsp;<?php $item=sizeof($_SESSION['cart']); if($item==0)echo "<span class='badge' id='noOfItemInCart'></span><span class='glyphicon glyphicon-shopping-cart' id='cartLogo'></span>"; else echo"<span class='badge' id='noOfItemInCart'>$item</span>" ?>
+								</button>
+							</a>
+							<a href='login.php'>
+								<button type="button" class="btn btn-primary navbar-btn btn-margin-rl-10">
+									Login&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</button>
+							</a>
+					</div>
+				</div>
+		</div>
  </nav>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body alert alert-info">
+                Modal Content<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            </div>
+        </div> 
+    </div>
+</div>
