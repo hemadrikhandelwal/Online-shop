@@ -1,3 +1,4 @@
+
 <!--navbar-->
 
 <!-- This contains the navbar for all the pages -->
@@ -25,17 +26,49 @@
 
 
 					<div class="navbar-right">
-						<span class="navbar-text ">Welcome Guest !</span>
-							<a href='cart.php' data-container = "body" data-toggle = "popover" data-placement = "bottom" data-content = "Product Added" data-trigger="manual" class="showPopover">
-								<button type="button" class="btn btn-success navbar-btn btn-margin-rl-10" >
-									Cart&nbsp;<?php $item=sizeof($_SESSION['cart']); if($item==0)echo "<span class='badge' id='noOfItemInCart'></span><span class='glyphicon glyphicon-shopping-cart' id='cartLogo'></span>"; else echo"<span class='badge' id='noOfItemInCart'>$item</span>" ?>
-								</button>
-							</a>
-							<a href='login.php'>
-								<button type="button" class="btn btn-primary navbar-btn btn-margin-rl-10">
-									Login&nbsp;<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-								</button>
-							</a>
+						<span class="navbar-text ">
+						<?php
+							if(!isset($_SESSION['email']))
+							{
+								echo "Welcome Guest !";
+							}
+							if(isset($_SESSION['email']))
+							{
+								$email=$_SESSION['email'];
+								$q="select * from user where user_email='$email'";
+								$run=mysqli_query($con,$q);
+								$row=mysqli_fetch_array($run);
+								echo "Welcome <a href='my_account.php' class='navbar-link'>".$row['user_name']."</a> !";
+							}
+						?>
+						</span>
+
+						<a href='cart.php' data-container = "body" data-toggle = "popover" data-placement = "bottom" data-content = "Product Added" data-trigger="manual" class="showPopover">
+							<button type="button" class="btn btn-success navbar-btn btn-margin-rl-10" >
+								Cart&nbsp;<?php $item=sizeof($_SESSION['cart']); if($item==0)echo "<span class='badge' id='noOfItemInCart'></span><span class='glyphicon glyphicon-shopping-cart' id='cartLogo'></span>"; else echo"<span class='badge' id='noOfItemInCart'>$item</span>" ?>
+							</button>
+						</a>
+
+						<?php 
+							if(isset($_SESSION['email']))
+							{
+								echo "<a href='logout.php'>
+									<button type='button' class='btn btn-primary navbar-btn btn-margin-rl-10'>
+										Logout&nbsp;<span class='glyphicon glyphicon-user' aria-hidden='true'></span>
+									</button>
+								</a>";
+
+							}
+							else
+							{
+								echo "<a href='login.php'>
+									<button type='button' class='btn btn-primary navbar-btn btn-margin-rl-10'>
+										Login&nbsp;<span class='glyphicon glyphicon-user' aria-hidden='true'></span>
+									</button>
+								</a>";
+							}
+							?>
+
 					</div>
 				</div>
 		</div>

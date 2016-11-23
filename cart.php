@@ -15,6 +15,7 @@
 	if(isset($_GET['action']) AND $_GET['action']=='empty')
 	{
 		unset($_SESSION['cart']);
+		$_SESSION['cart']=[];
 	}
 ?>
 <!doctype html>

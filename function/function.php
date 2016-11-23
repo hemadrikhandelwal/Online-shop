@@ -108,8 +108,9 @@ function cat_show($no)
 	$title=$row['cat_title'];
 	return "$title";
 }
-function add_to_cart()
+// to show js alert
+function phpAlert($msg)
 {
-	$_SESSION['cart'][91]=["id"=>91,"qty"=>1];
-} 
+	echo "<script>alert('$msg');</script>";
+}
 ?>

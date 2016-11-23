@@ -3,7 +3,7 @@
 
 <?php
 //Function to display all products
-	error_reporting(E_ERROR | E_PARSE); // This will not show Error
+	//error_reporting(E_ERROR | E_PARSE); // This will not show Error
 	function show_all()
 	{
 		global $con;
