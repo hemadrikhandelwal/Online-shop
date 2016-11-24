@@ -26,11 +26,17 @@
 			$db_pass=$row['user_password'];
 			if($db_pass!=$pass)
 			{
+				//when password is wrong
 				phpAlert("Wrong Password ");
 			}
 			else
 			{
+				//login successful
 				$_SESSION['email']=$email;
+				//updating last active
+				$dt=date("d/m/Y G:i:s");
+				$q="update user set user_last_active='$dt' where user_email='$email'";
+				$run=mysqli_query($con,$q);
 				// Redirecting
 				echo"<script>window.open('index.php','_self');</script>";
 			}

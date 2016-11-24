@@ -7,6 +7,8 @@
 	{
 		echo "The connection was not established.". mysqli_connect_errno();
 	}
+	//to set default timezone
+	date_default_timezone_set('Asia/Kolkata');
 ?>
 
 <?php
@@ -112,5 +114,10 @@ function cat_show($no)
 function phpAlert($msg)
 {
 	echo "<script>alert('$msg');</script>";
+}
+// to load a particular page
+function phpLoad($link)
+{
+	echo "<script>window.open('$link','_self');</script>";
 }
 ?>

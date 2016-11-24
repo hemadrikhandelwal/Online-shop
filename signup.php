@@ -1,5 +1,10 @@
 <?php
-	include("function/function.php")
+	include("function/function.php");
+
+	if(isset($_SESSION['email']))
+	{
+		echo "<script>window.open('index.php','_self')</script>";
+	}
 ?>
 <!doctype html>
 <html lang="en">
@@ -110,7 +115,8 @@
 			{
 				//If registration successful
 				phpAlert("Account succesfully registered");
-				echo "<script>window.history.back()</script>";
+				$_SESSION['email']=$uemail;
+				echo "<script>window.open('index.php','_self')</script>";
 			}
 			else
 			{

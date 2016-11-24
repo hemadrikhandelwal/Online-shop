@@ -79,7 +79,7 @@
 		</div>
 		<div class="table-responsive">
 
-			<table class="table table-striped table-hover table-condensed" style="vertical-align: middle">
+			<table class="table table-striped table-hover table-condensed" >
 				<thead>
 					<tr class="info">
 						<th>S.No.</th>
