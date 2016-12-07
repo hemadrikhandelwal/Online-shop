@@ -1,4 +1,4 @@
-
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -29,10 +29,12 @@ div#header{width:100%;
 		 color:#fff;}
 .logo a span{font-weight:300;}
 
-div#container{width:100%;
-				margin:0 auto;}
+<!-- div#container{width:100%;-->
+				<!-- margin:0 auto;}-->
+div#content{width:100%;
+			margin:0 auto;}
 .sidebar{width:200px;
-			/*height:100%;*/
+			height:100%;
 			background-color:#171717;
 			float:left;}
 
@@ -54,32 +56,14 @@ padding-left:30px;
 ul#nav li a.selected{background-color:#030303;
 color:#fff;}
 
-.content{width:auto;
-		margin-left:200px;
-		height:100%;
-		background-color:#95a5a6;
-		padding:15px;}
+.container-fluid{width:auto;
+			margin-left:200px;
+			height:100%;
+		 	background-color:95abaa;
+			padding:15px;}
 		
-.content h1{text-decoration:underline;
-			font-weight:bold;
-			font-family:Verdana,sans-serif;}
-.content p{ color:#424242;
-			font-size:0.80em;}
-div#box{ margin-top:15px;}
 
-div#box .box-top{color:#fff;
-				text-shadow: 0px 1px #000;
-				background-color:#2980b9; 
-				padding:5px;
-				padding-left:15px;
-				font-weight:300;}
- div#box .box-panel{ padding:15px;
- background-color:#fff;
- color:#333;
- 
- }
- 
- a.mobile{display:block;
+a.mobile{display:block;
  			color:#fff;
 			background-color:#000;
 			text-align:center;
@@ -88,13 +72,13 @@ a.mobile:active{ background-color:#4a4a4a;}
 
 @media only screen and (max-width:320px)
 { 
-	.sidebar{
+		.sidebar{
 				width:100%;
 							}		
 	.content{
 			margin-left:0px;
 			}
-		}
+		} -
 @media only screen and (min-width:320px)
 { 
 
@@ -103,7 +87,6 @@ a.mobile:active{ background-color:#4a4a4a;}
 	
 
 }
-
 </style>
 <body>
 <div id="header">
@@ -116,53 +99,121 @@ a.mobile:active{ background-color:#4a4a4a;}
     
     
     </a>
-<div id="container">
 	<div class="sidebar">
     	<ul id="nav">
         	<li><a class="selected" href="#">Dashbord</a></li>
-            <li><a href="#">User</a></li>
-			<li><a href="#">Messages</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Payment</a></li>   
-            <li><a href="#">Purchases</a></li>
+            <li><a href="#">Catalog</a></li>
+			<li><a href="#">Extensions</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Marketing</a></li>   
+            <li><a href="#">System</a></li>
+             <li><a href="#">Products</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Reports</a></li>
     	</ul>
     </div>
-    
-    
-    <div class="content">
-    <h1>Dashboard</h1>
-    	<p>Here is the stuff</p>
-        
-        
-        <div id="box">
-        	<div class="box-top">News</div>
-            <div class="box-panel">
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-             </div>
-    	</div>
-    
-    
-     <div id="box">
-        	<div class="box-top">News</div>
-            <div class="box-panel">
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-             </div>
-    	</div>
-    
-    
-    <div id="box">
-        	<div class="box-top">News</div>
-            <div class="box-panel">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-             </div>
-    	</div>
-    </div>
 
-
+    
+    
+<div class="content">   	
+ <div class="container-fluid">
+           <div class="page header">
+           
+               <h1>Products</h1>
+           </div>    
+            <ul class="breadcrumb">   			
+            	<li><a href="#">Home</a></li>
+                <li><a href="#">Admin panel</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+			
+     	<div class="panel panel-default">
+        	<div class="panel-heading">
+            	<h3 class="panel-title">	
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true">
+                    Product&nbsp;List &nbsp;
+                    </span>
+                </h3>
+              </div>
+            </div>
+                         
+     <div class="well">
+     	<div class="row">
+        	<div class="col-sm-4">
+               <div class="form-group">
+               		<label class="control-label" for="input-name">Product Name</label>
+                    
+                    <input type="text" name="filter_name" value="" placeholder="Product Name" id="input-name" class="form-control" autocomplete="off">
+                    <ul class="dropdown-menu"></ul>
+                    <ul class="dropdown-menu"></ul>
+               </div>
+               
+               <div class="form-group">
+                <label class="control-label" for="input-model">Product category</label>
+                <input type="text" name="filter_model" value="" placeholder="Category" id="input-model" class="form-control" autocomplete="off"><ul class="dropdown-menu"></ul><ul class="dropdown-menu"></ul>
+              </div>
+		</div>              
+              
+              
+              <div class="col-sm-4">
+              <div class="form-group">
+                <label class="control-label" for="input-price">Price</label>
+                <input type="text" name="filter_price" value="" placeholder="Price" id="input-price" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="input-quantity">Quantity</label>
+                <input type="text" name="filter_quantity" value="" placeholder="Quantity" id="input-quantity" class="form-control">
+              </div>
+             </div>
+             
+             
+             <div class="col-sm-4">
+              <div class="form-group">
+                <label class="control-label" for="input-status">Status</label>
+                <select name="filter_status" id="input-status" class="form-control">
+                  <option value="*"></option>
+                                    <option value="1">Enabled</option>
+                                                      <option value="0">Disabled</option>
+                                  </select>
+              </div>
+              <button type="button" id="button-filter" class="btn btn-primary pull-right"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Filter</button>
+            </div>
+            
+            
+       
+            
+            <table class="table responsive">
+            	<table class="table table-bordered">
+            		<thead>
+            			<tr>
+                			<th>S.no</th>	
+                            <th>Product Name</th>
+                            <th>Product Category</th>
+                			<th>Price</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                                      
+                        </tr>
+                	</thead>
+                    <tbody>
+                    	<tr>
+                        	<td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </table>
+           
+            
+                    </div>
+     </div> 
+     
+   </div>
 </div>
-
-
-
 <!--linking of js -->
 	<script src="js/jquery.js"</script>
 	<script src="js/bootstrap.js"></script>
